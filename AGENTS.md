@@ -99,6 +99,35 @@ Use this project to validate template changes against a real game creation workf
 
 ## 📏 Quality Standards
 
+### Versioning (Semantic Versioning)
+
+This template uses [semver](https://semver.org/). The current version is tracked in:
+- `template/AGENTS.md` (header comment)
+- `template/config/game-project.yaml` (`advanced.template_version`)
+- `CHANGELOG.md` (release history)
+
+**All three locations must be updated together on every version bump.**
+
+#### When to Bump Versions
+
+| Change Type | Version Bump | Examples |
+|-------------|-------------|----------|
+| **MAJOR** (X.0.0) | Breaking changes | Renamed/removed agents, restructured config YAML, changed file layout, removed fields from Game Card |
+| **MINOR** (0.X.0) | New features, backward compatible | New sub-agent, new doc template, new config options, new workflow phase |
+| **PATCH** (0.0.X) | Fixes, improvements | Prompt wording improvements, typo fixes, better examples in prompts, bug fixes in init script |
+
+#### Version Bump Checklist
+
+When making a change that requires a version bump:
+
+1. Determine the bump type (major/minor/patch) based on the table above
+2. Update the version string in `template/AGENTS.md` header comment
+3. Update `advanced.template_version` in `template/config/game-project.yaml`
+4. Add an entry to `CHANGELOG.md` with the new version, date, and changes
+5. Commit with message: `chore: bump template version to X.Y.Z`
+
+**Rule:** Any change to files inside `template/` MUST include a version bump. Changes only to root-level files (README, root AGENTS.md, scripts, docs) do NOT require a version bump.
+
 ### Agent Prompts Must:
 - Be clear and actionable (an AI can follow them without ambiguity)
 - Include concrete examples, not just abstract principles

@@ -18,34 +18,108 @@ The template provides:
 - **Educators** teaching game design and creative thinking
 - **Developers** building AI-powered creative tools for children
 
-## Quick Start
+## Getting Started
 
-### 1. Initialize a New Game Project
+There are three ways to use this template depending on your situation. Copy the appropriate prompt into your AI coding assistant (GitHub Copilot, Cursor, etc.).
+
+---
+
+### 🆕 Prompt 1: New Game Project (Start from Scratch)
+
+Use this when you're starting a brand new game with a kid.
+
+```
+I want to create a new kids' game project using the KidsGames template.
+
+1. Clone the template from https://github.com/pedrofuentes/KidsGames
+2. Copy all files from the template/ folder into my game project at [TARGET_PATH]
+3. Create the game project directories: game/assets/art, game/assets/audio,
+   game/assets/fonts, game/scenes, game/scripts, game/ui, art-prompts, playtests
+4. Update config/game-project.yaml with:
+   - Designer name: [KID_NAME]
+   - Designer age: [KID_AGE]
+   - Language: [en/es/both]
+   - Interaction mode: [kid/parent/hybrid]
+5. Create an initial Game Card in docs/game-card.md with the kid's name
+6. Initialize a git repository
+7. Read the AGENTS.md and begin the Imagine phase with the Game Designer
+```
+
+Or use the init script directly:
 
 ```powershell
-# From the KidsGames directory
-.\scripts\init-game-project.ps1 -ProjectPath "C:\Users\YourName\projects\MyKidsGame" -DesignerName "Alex" -DesignerAge 6
+.\scripts\init-game-project.ps1 -ProjectPath "[TARGET_PATH]" -DesignerName "[KID_NAME]" -DesignerAge [KID_AGE]
 ```
 
-### 2. Or Copy Manually
+---
 
-Copy the entire `template/` folder contents into your game project directory.
+### 📂 Prompt 2: Existing Game Project (Add Template to Existing Game)
 
-### 3. Configure
+Use this when you already have a game project with code, assets, or docs and want to adopt the KidsGames agent system.
 
-Edit `config/game-project.yaml` in your game project:
+```
+I want to add the KidsGames agent template to my existing game project at [PROJECT_PATH].
 
-```yaml
-designer:
-  name: "Alex"
-  age: 6
-  language: "en"        # "en", "es", or "both"
-  interaction_mode: "hybrid"  # "kid", "parent", or "hybrid"
+1. Clone the template from https://github.com/pedrofuentes/KidsGames
+2. Before copying any template files, back up any existing files that would be
+   overwritten. For each file that exists in both the template and my project:
+   - Create a backup at [FILENAME].backup
+   - After copying the template file, merge the original content into the
+     template version (e.g., if I have an existing AGENTS.md, incorporate its
+     instructions into the template AGENTS.md; if I have existing docs, merge
+     them into the template doc structure)
+3. Copy all files from the template/ folder into my project
+4. Create any missing directories: game/assets/art, game/assets/audio,
+   game/assets/fonts, game/scenes, game/scripts, game/ui, art-prompts, playtests
+5. Update config/game-project.yaml with my project details:
+   - Designer name: [KID_NAME]
+   - Designer age: [KID_AGE]
+   - Language: [en/es/both]
+   - Interaction mode: [kid/parent/hybrid]
+6. If I already have game code, analyze it and pre-fill:
+   - The Game Card (docs/game-card.md) with the current game's concept
+   - The Implementation Spec based on existing code and mechanics
+   - The Art Style Guide if visual assets already exist
+7. Delete the .backup files once the merge is confirmed correct
+8. Read the AGENTS.md and ask me where we left off
 ```
 
-### 4. Start Creating!
+---
 
-Open your game project with an AI coding assistant (GitHub Copilot, etc.) and the `AGENTS.md` will guide the agent to become the Game Creator.
+### ⬆️ Prompt 3: Upgrade Template (Update to New Version)
+
+Use this when a new version of the KidsGames template is released and you want to upgrade your existing game project.
+
+```
+I want to upgrade the KidsGames agent template in my project at [PROJECT_PATH]
+from version [CURRENT_VERSION] to the latest version.
+
+1. Check the current template version in my config/game-project.yaml
+   (under advanced.template_version)
+2. Clone or pull the latest template from https://github.com/pedrofuentes/KidsGames
+3. Check the new version in the template's config/game-project.yaml
+4. Review the CHANGELOG.md in the template repo for breaking changes between
+   my version and the new version
+5. For each template file that would be updated:
+   - Back up my current version as [FILENAME].pre-upgrade
+   - If the file contains project-specific content I've customized
+     (AGENTS.md customizations, filled-in docs, config values), merge my
+     customizations into the new template version
+   - If the file is a pure template file I haven't modified (sub-agent prompts,
+     doc templates), replace it directly
+6. Preserve ALL of these untouched:
+   - config/game-project.yaml designer settings
+   - docs/game-card.md (my game's design)
+   - docs/implementation-spec.md (if exists)
+   - game/ folder (all game code and assets)
+   - art-prompts/ (all generated prompts and logs)
+   - playtests/ (all playtest records)
+7. Update advanced.template_version in config/game-project.yaml to the new version
+8. Delete .pre-upgrade backup files once merge is confirmed correct
+9. Summarize what changed between versions and any action items
+```
+
+---
 
 ## The Agent Team
 

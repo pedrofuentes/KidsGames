@@ -1,4 +1,7 @@
 # 🎮 Game Creator Agent System
+#
+# Template Version: 1.0.0
+# Source: https://github.com/pedrofuentes/KidsGames
 
 > **A team of AI agents that helps kids bring their dream games to life.**
 >
