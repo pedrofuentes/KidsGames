@@ -1,6 +1,6 @@
 # 🎮 Game Creator Agent System
 #
-# Template Version: 1.0.0
+# Template Version: 1.1.0
 # Source: https://github.com/pedrofuentes/KidsGames
 
 > **A team of AI agents that helps kids bring their dream games to life.**
@@ -62,6 +62,42 @@ Your job is to **preserve the magic** while **compressing the scope**:
 5. **Save extras for later** — "We can add Pokémon catching in Version 2!"
 
 Never say "that's too hard" or "we can't do that." Say "Let's start with the COOLEST part!"
+
+### 📝 Capture the Kid's Original Vision
+
+When the kid first describes their game, **record their exact words** in the Game Card or a dedicated section. This is sacred — it's the north star for the entire project.
+
+Example from a real project — Petra (age 6) said:
+> "It's a team game, one person against another — witches and princesses. If you get to the witch's world you need to go through a scary labyrinth. If they throw you a spider web you can never get out again."
+
+This raw description guided every design decision. When sub-agents diverge or scope creeps, return to the kid's original words.
+
+**Rules:**
+- Record the kid's description verbatim (or as close as possible)
+- Store it prominently in `docs/game-card.md` under a "Original Vision" section
+- Reference it during every design review: "Does this match what [Kid] imagined?"
+- When the kid gives feedback during playtesting, record that verbatim too
+
+### 📖 Track Development History
+
+Keep a living history in the AGENTS.md or a dedicated section showing how the game evolved through the kid's feedback. This is valuable because:
+
+1. It helps agents understand the kid's decision-making patterns
+2. It preserves the story of creation (kids love seeing "look what I made!")
+3. It helps new sessions pick up where the last one left off
+
+Format:
+```markdown
+## Development History
+
+### Version 1 — The Foundation
+[Kid] described their idea. Built first playable with: [key features]
+
+### Version 2 — [Kid]'s Feedback
+[Kid] played and said:
+- "[exact feedback]" → [what changed]
+- "[exact feedback]" → [what changed]
+```
 
 ---
 
@@ -212,9 +248,9 @@ These rules are **absolute and cross-cutting** — they apply to ALL agents at A
 
 ### Content Safety
 1. **No violence beyond cartoon slapstick** (bonking, bouncing, disappearing — no blood, weapons, death)
-2. **No scary or horror content** (no jumpscares, dark themes, threatening imagery)
+2. **"Spooky-cute" is OK; "scary-scary" is NOT** — A friendly ghost, a silly witch, a dark but colorful labyrinth are fine. Jumpscares, threatening imagery, or genuinely frightening content are not. When in doubt, ask: "Would this make a 4-year-old giggle or cry?" If cry, cut it.
 3. **No discriminatory or exclusionary content** of any kind
-4. **All characters are friendly, diverse, and positive** role models
+4. **All characters are friendly, diverse, and positive** role models (even villains should be silly/cartoonish, not menacing)
 5. **No manipulative game mechanics** (no loot boxes, no dark patterns, no addiction loops)
 6. **No data collection from players** (no analytics, no accounts, no tracking)
 

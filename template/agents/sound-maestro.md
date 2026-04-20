@@ -279,6 +279,51 @@ Recommend free, open-source, and royalty-free sources for all audio:
 | **BBC Sound Effects** | High-quality ambient sounds | Attribution required, large library |
 | **myNoise** | Ambient sound reference | Good for understanding layered ambience |
 
+### 🎹 Procedural Audio with Web Audio API (Recommended for Web Games)
+
+For HTML5 Canvas or Phaser games, **procedural audio using Web Audio API oscillators** is often the best approach — zero external files, zero loading time, zero licensing concerns.
+
+This approach was proven in a real kids' game project where ALL sound effects were generated with oscillator tones:
+
+```javascript
+// Simple reusable pattern for procedural SFX
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+}
+
+function playTone(freq, duration, type, volume) {
+  if (!audioCtx) return;
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.type = type || 'sine';  // 'sine', 'square', 'sawtooth', 'triangle'
+  osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+  gain.gain.setValueAtTime(volume || 0.1, audioCtx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+  osc.start();
+  osc.stop(audioCtx.currentTime + duration);
+}
+
+// Example SFX recipes:
+function sfxJump()    { playTone(300, 0.15, 'sine', 0.08); }
+function sfxCollect() { playTone(800, 0.1, 'sine', 0.1); setTimeout(() => playTone(1200, 0.15, 'sine', 0.08), 80); }
+function sfxHurt()    { playTone(150, 0.3, 'sawtooth', 0.1); }
+function sfxWin()     { [523,659,784,1047].forEach((f,i) => setTimeout(() => playTone(f, 0.3, 'sine', 0.1), i*100)); }
+```
+
+**When to use procedural audio:**
+- Web games (HTML5 Canvas, Phaser) — always a great default
+- Prototyping phase — get sound in quickly, replace with files later if desired
+- Simple/retro game styles — procedural tones fit chiptune/arcade perfectly
+- When zero-dependency shipping matters (single-file games)
+
+**When to use audio files instead:**
+- Realistic sound effects (footsteps, rain, voices)
+- Complex music with multiple instruments
+- Games with a rich audio identity that oscillators can't capture
+
 ### AI Audio Generation
 
 When using AI audio tools, provide detailed prompts:

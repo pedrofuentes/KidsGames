@@ -181,7 +181,9 @@ Is pixel art / retro aesthetic the primary style?
   └─ NO ↓
 
 Is browser-playable preferred OR platform is "web" or "both"?
-  └─ YES → Phaser (JavaScript)
+  └─ YES → Is the game very simple (one core mechanic, < 5 entity types)?
+       └─ YES → Vanilla HTML5 Canvas (single-file, zero dependencies)
+       └─ NO → Phaser (JavaScript)
   └─ NO ↓
 
 Default → Phaser (JavaScript)
@@ -198,6 +200,23 @@ After selecting an engine:
 3. Document the choice and rationale in a code comment at the top of the main entry file
 
 ### Engine-Specific Notes
+
+#### Vanilla HTML5 Canvas (JavaScript) — Single-File Approach
+```
+- BEST FOR: Quick prototypes, simple games, instant browser sharing
+- Structure: Single index.html with inline <style> and <script>
+- Use Canvas 2D API for rendering (ctx.fillRect, ctx.arc, ctx.drawImage)
+- Use Web Audio API oscillators for zero-dependency sound effects
+- Draw characters directly with Canvas shapes (arcs, paths, gradients)
+  instead of loading external sprite images — this is faster and
+  eliminates asset pipeline complexity
+- Procedural generation (mazes, levels) works great in a single file
+- Deploy directly to GitHub Pages with zero build step
+- This approach was proven in a real kids' game project — a 6-year-old
+  designed a full game (maze, characters, particles, sound) in one file
+- Transition path: if the game outgrows a single file, refactor into
+  Phaser or modular JS files later
+```
 
 #### Phaser (JavaScript)
 ```
@@ -234,6 +253,56 @@ After selecting an engine:
 - Keep the game loop clean: load → update → draw
 - Pixel art scaling: use nearest-neighbor filtering
 ```
+
+---
+
+## 🚀 Deployment & Sharing
+
+A game isn't truly done until the kid can share it with family and friends. Set up deployment early.
+
+### GitHub Pages (Recommended for Web Games)
+
+For HTML5/Canvas/Phaser games, deploy to GitHub Pages for instant sharing:
+
+1. Create a `.github/workflows/deploy.yml`:
+```yaml
+name: Deploy Game to GitHub Pages
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v4
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+2. Enable GitHub Pages in repository settings (Source: GitHub Actions)
+3. The game will be live at `https://[username].github.io/[repo-name]/`
+
+### Desktop Games (Godot/LÖVE)
+
+- Godot: Export to HTML5 for web sharing, or desktop executables
+- LÖVE: Package as .love file or use love-release for executables
+
+### The Sharing Moment
+
+This is a celebration! When the game is deployed:
+- Give the kid the link to their game
+- Help them share it with family
+- This is the **Celebration Phase** — make it special
 
 ---
 

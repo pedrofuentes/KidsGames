@@ -24,7 +24,7 @@ engine:
 # ─────────────────────────────────────────────
 safety:
   max_violence: "none"        # "none" or "cartoon" (cartoon = bonking, bouncing, no blood)
-  scary_content: false        # Allow mildly spooky content? (haunted house, friendly ghosts)
+  scary_content: false        # Allow "spooky-cute" content? (silly witches, friendly ghosts — never truly scary)
   monetization: false         # Any in-app purchases, ads, or premium content? (always false for kids)
   data_collection: false      # Any player data collection or analytics? (always false for kids)
   require_parent_approval:    # Features that need parent OK before implementing
@@ -37,7 +37,7 @@ safety:
 # ─────────────────────────────────────────────
 art:
   style: "auto"               # "auto" (agent decides), "pixel", "cartoon", "geometric", "watercolor"
-  generation_tool: "prompts"  # "prompts" (AI generation), "svg" (code-generated), "placeholder"
+  generation_tool: "prompts"  # "prompts" (AI generation), "canvas" (code-drawn), "svg", "placeholder"
   color_palette: "bright"     # "bright", "pastel", "earth", "neon", "custom"
   custom_palette: []          # Hex colors if palette is "custom", e.g., ["#FF6B6B", "#4ECDC4"]
   resolution: "720p"          # Target resolution: "480p", "720p", "1080p"
@@ -71,4 +71,4 @@ advanced:
   max_level_count: 10         # Maximum number of levels (scope control)
   max_character_count: 5      # Maximum unique characters (scope control)
   prototype_first: true       # Prioritize getting a playable prototype early
-  template_version: "1.0.0"   # Semantic version of the KidsGames template used
+  template_version: "1.1.0"   # Semantic version of the KidsGames template used

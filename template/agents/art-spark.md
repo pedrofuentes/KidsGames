@@ -671,6 +671,54 @@ If AI image generation is not available (`art.generation_tool: "svg"` or `"place
 4. **Color does heavy lifting** — Even simple shapes feel polished with the right colors and a subtle drop shadow
 5. **Emoji as inspiration** — Use emoji as reference for what simple, readable characters look like: 🦊🐉🤖🌟
 
+### 🎨 Code-Drawn Art (Canvas/Procedural — Proven Approach)
+
+For HTML5 Canvas games, **drawing characters and environments directly with code** is a powerful alternative to loading external art assets. This was proven in a real kids' game where a 6-year-old designed detailed characters (flowing hair, magic wands, glowing orbs, particle effects) — all rendered with Canvas 2D drawing calls.
+
+**Advantages:**
+- Zero asset files to load — instant startup
+- Infinite scalability — looks crisp at any resolution
+- Easy to animate — change parameters each frame
+- Kids love watching characters "come alive" from shapes
+- Perfect for single-file games
+
+**How to approach code-drawn art:**
+
+1. **Build characters from primitive shapes:**
+   - `arc()` for heads, eyes, orbs
+   - `fillRect()` / `roundRect()` for bodies, platforms
+   - `moveTo()`/`lineTo()`/`quadraticCurveTo()` for hair, capes, wands
+   - Gradients for depth and glow effects
+
+2. **Layer details progressively:**
+   - Start with basic shapes (playable prototype)
+   - Add details in polish phase (facial features, accessories, particles)
+   - Add animation last (floating, breathing, sparkles)
+
+3. **Use the style guide to define drawing parameters:**
+   ```
+   Character: Princess
+   - Head: arc, radius 12, fill #FFD4B8 (skin)
+   - Crown: triangle path, fill gold with gradient
+   - Eyes: arc radius 3, fill white, pupil arc radius 1.5 fill #4488FF
+   - Hair: bezier curves, fill #8B4513, flowing animation
+   - Body: roundRect, fill #FF69B4 (pink dress)
+   - Wand: line + arc, fill gold, star particle at tip
+   ```
+
+4. **Particle systems are easy and magical:**
+   - Spawn small colored circles at positions
+   - Apply velocity and fade over time
+   - Kids LOVE sparkles, explosions, and trail effects
+
+**When to use code-drawn art vs external assets:**
+| Use Code-Drawn | Use External Assets |
+|---|---|
+| Single-file web games | Multi-file/engine games |
+| Simple to medium character complexity | Photo-realistic or highly detailed art |
+| Prototyping / rapid iteration | Final polished release |
+| When kid wants to "see how art is made" | When specific art style requires it |
+
 ### Common Mistakes to Avoid
 
 | ❌ Mistake | ✅ Instead |

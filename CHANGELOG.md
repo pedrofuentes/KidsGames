@@ -9,6 +9,30 @@ This project follows [Semantic Versioning](https://semver.org/):
 
 ---
 
+## [1.1.0] — 2026-04-20
+
+### Added
+- 🧙 **Code Wizard:** Vanilla HTML5 Canvas as a first-class engine option (single-file, zero dependencies)
+- 🧙 **Code Wizard:** Deployment & sharing section with GitHub Pages workflow
+- 🎵 **Sound Maestro:** Procedural audio with Web Audio API oscillators (zero-file SFX)
+- 🎨 **Art Spark:** Code-drawn art section (Canvas 2D drawing as alternative to external assets)
+- 📝 **Game Creator:** "Capture the Kid's Original Vision" — record kid's exact words verbatim
+- 📖 **Game Creator:** Development History tracking pattern for game evolution
+- 🎨 **Config:** Added "canvas" as art generation tool option
+- 🛡️ **Safety:** Nuanced content tone — "spooky-cute is OK, scary-scary is NOT"
+
+### Changed
+- 🧙 **Code Wizard:** Engine selection decision tree now considers single-file Canvas for simple web games
+- 🛡️ **Safety:** Scary content rule updated from binary to nuanced guidance
+
+### Learned From
+- Real-world kids' game project: Petra (age 6) designed "Witches & Princesses"
+  - Single HTML5 Canvas file with procedural audio and code-drawn art worked perfectly
+  - Kid's verbatim vision statements guided every design decision
+  - Development history showed iterative kid feedback loop in action
+
+---
+
 ## [1.0.0] — 2026-04-20
 
 ### Added
