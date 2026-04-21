@@ -108,6 +108,12 @@ This template uses [semver](https://semver.org/). The current version is tracked
 
 **All three locations must be updated together on every version bump.**
 
+**After every version bump, also update the test projects:**
+- `~/projects/GabrielsGame` — Copy updated template files, preserve config designer settings
+- `~/projects/PetraGame` — Copy updated template files, preserve config designer settings and game code
+
+This ensures the test projects always reflect the latest template version.
+
 #### When to Bump Versions
 
 | Change Type | Version Bump | Examples |
