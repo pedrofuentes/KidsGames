@@ -190,7 +190,7 @@ All games created with this template follow strict safety rules:
 
 ## Testing
 
-The template is tested against the project at `~/projects/GabrielsGame`.
+Test the template by applying it to a game project and running through a game creation session.
 
 ## Contributing
 

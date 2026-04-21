@@ -89,11 +89,9 @@ To test the template against a real project:
    - Do doc templates fill in correctly?
 5. Document any issues and fix them
 
-### Test Project
+### Test Projects
 
-The designated test project lives at: `~/projects/GabrielsGame`
-
-Use this project to validate template changes against a real game creation workflow.
+Test the template by applying it to a real game project using the init script or upgrade prompt from the README. After making template changes, verify they work against at least one active game project.
 
 ---
 
@@ -108,11 +106,7 @@ This template uses [semver](https://semver.org/). The current version is tracked
 
 **All three locations must be updated together on every version bump.**
 
-**After every version bump, also update the test projects:**
-- `~/projects/GabrielsGame` — Copy updated template files, preserve config designer settings
-- `~/projects/PetraGame` — Copy updated template files, preserve config designer settings and game code
-
-This ensures the test projects always reflect the latest template version.
+**After every version bump**, also update any active game projects that use this template by following the upgrade prompt in the README.
 
 #### When to Bump Versions
 
