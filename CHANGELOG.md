@@ -9,6 +9,22 @@ This project follows [Semantic Versioning](https://semver.org/):
 
 ---
 
+## [1.2.0] — 2026-04-21
+
+### Added
+- 🔄 **Iteration loop is now a core concept** — the 3 kid-facing phases (Imagine → Make → Play) are explicitly a cycle, not linear
+- 🔄 **Feedback Loop section** — detailed guidance on handling returning sessions where the kid played and has changes
+- 📖 **Game version tracking** — pattern for tracking v1 → v2 → v3 as the game evolves through kid feedback
+- 🚀 **Four entry points** — Getting Started now routes to: new project, mid-build continue, feedback session, or new ideas session
+- 📝 **Real-world iteration example** — Petra's v1→v3.5 journey documented as a reference
+
+### Changed
+- 🏗️ **Project Phases** — rewritten from linear "three phases" to cyclical "creation cycle" with visual diagram
+- 🚀 **Getting Started** — expanded from 2 paths to 4 explicit entry points with example greetings
+- 🔧 **Internal workflow** — all 7 internal phases now note "(or modifies existing)" for iteration awareness
+
+---
+
 ## [1.1.0] — 2026-04-20
 
 ### Added
