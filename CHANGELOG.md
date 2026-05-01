@@ -9,6 +9,22 @@ This project follows [Semantic Versioning](https://semver.org/):
 
 ---
 
+## [1.3.2] — 2026-05-01
+
+### Added
+- 📋 **Parent Summary template** (`docs/parent-summary.md`) — non-technical session recap for parents
+- 🛡️ **Fun Guardian:** Accessibility Baseline checklist (one-hand play, no color-only signals, pause-any-time, no flashing >3Hz)
+- 🧙 **Code Wizard:** Bilingual string externalization pattern (`strings.json` for `language: "both"`)
+- 🎨 **Art Spark:** Reduced Motion Mode — alternative animations for `prefers-reduced-motion`
+- 🧙 **Code Wizard:** `prefers-reduced-motion` media query support
+- 🎮 **Game Creator:** Parent Recap added as session-close deliverable and Phase Exit Criteria
+
+### Motivation
+- 3-model gap analysis panel (Opus 4.7, Opus 4.6, Sonnet 4.6) unanimously found no 6th agent needed
+- These enhancements close the remaining thin gaps in parent communication, accessibility, and localization
+
+---
+
 ## [1.3.1] — 2026-05-01
 
 ### Fixed
